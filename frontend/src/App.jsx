@@ -1,3 +1,5 @@
+// Minor change to enable frontend PR creation
+
 import React from 'react'
 import Tasks from './pages/Tasks'
 
