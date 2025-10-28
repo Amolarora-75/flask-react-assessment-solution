@@ -1,50 +1,75 @@
-# Fullstack Assessment — Flask + React
+# 🧠 Flask + React Fullstack Assessment  
+> A complete end-to-end task management and commenting system built using **Flask (Python)** and **React (Vite)** — with RESTful APIs, database integration, automated tests, and a simple frontend UI.
 
-This project delivers:
-- **Backend (Flask + SQLite)**: CRUD for **Tasks** and **Comments** (comments belong to a task).
-- **Tests (pytest)**: Coverage for comment CRUD flow.
-- **Frontend (Vite + React)**: Simple Tasks UI with create/delete and add/delete comments per task.
+---
 
-## 1) Run Backend
-```bash
-cd backend
-python -m venv .venv
-# Windows: .venv\Scripts\activate
-# macOS/Linux:
-source .venv/bin/activate
-pip install -r requirements.txt
-python app.py
-```
-Backend runs at **http://localhost:8080**.
+## 📋 Table of Contents
+1. [Overview](#overview)
+2. [Tech Stack](#tech-stack)
+3. [Project Structure](#project-structure)
+4. [Backend Setup (Flask)](#backend-setup-flask)
+5. [Frontend Setup (React)](#frontend-setup-react)
+6. [Running Tests](#running-tests)
+7. [API Endpoints](#api-endpoints)
+8. [Creating Pull Requests](#creating-pull-requests)
+9. [Video Demonstration](#video-demonstration)
+10. [Contributors](#contributors)
 
-### API Quickstart
-- Create Task: `POST /api/tasks`  body: `{ "title":"T1", "description":"..." }`
-- List Tasks: `GET /api/tasks`
-- Create Comment: `POST /api/tasks/{taskId}/comments` body: `{ "body":"Hi", "author":"Amol" }`
-- List Comments: `GET /api/tasks/{taskId}/comments`
-- Update Comment: `PUT /api/comments/{commentId}`
-- Delete Comment: `DELETE /api/comments/{commentId}`
+---
 
-## 2) Run Frontend
-```bash
-cd frontend
-npm install
-npm run dev
-```
-Open **http://localhost:3000** (proxy to backend on `/api`).
+## 🧩 Overview
+This project was developed as part of a **Fullstack Engineer Assessment**. It implements:
+- **Backend (Flask + SQLite)** for RESTful Task and Comment management APIs  
+- **Frontend (React + Vite)** to create, view, and delete tasks and comments  
+- **Automated Testing** using Pytest for backend validation  
 
-## 3) Run Tests
-```bash
-cd backend
-pytest -q
-```
+### ✨ Features
+- Task CRUD (Create, Read, Update, Delete)  
+- Comment CRUD (linked to each Task)  
+- RESTful API design with validation  
+- Full test coverage for comment endpoints  
+- React-based frontend with real-time UI updates  
+- Proxy configuration to connect React → Flask easily  
 
-## 4) What to record in your video
-- Brief overview of the endpoints.
-- Show Postman/Thunder Client hitting the endpoints (create task → add comment → update → delete).
-- Show the React page: add a task, then add/delete comments.
+---
 
-## 5) Notes
-- This project uses **SQLite** for simplicity. It runs out-of-the-box (no external DB required).
-- CORS is enabled for the frontend to call the backend.
-```
+## ⚙️ Tech Stack
+### **Backend**
+- Python 3.10+
+- Flask 3.x
+- Flask-CORS
+- SQLAlchemy
+- Pytest
+
+### **Frontend**
+- React 18 (Vite)
+- JavaScript (ES6+)
+- Fetch API
+
+---
+
+## 📁 Project Structure
+fullstack-assessment/
+│
+├── backend/
+│ ├── app.py # Flask entry point
+│ ├── database.py # SQLAlchemy setup
+│ ├── models.py # Task & Comment models
+│ ├── routes.py # API endpoints
+│ ├── tests/
+│ │ └── test_comments.py # Pytest cases for CRUD
+│ ├── requirements.txt
+│ └── init.py
+│
+├── frontend/
+│ ├── src/
+│ │ ├── main.jsx
+│ │ ├── App.jsx
+│ │ └── pages/Tasks.jsx
+│ ├── vite.config.js
+│ ├── package.json
+│ └── index.html
+│
+└── README.md
+
+
